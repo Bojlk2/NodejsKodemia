@@ -1,0 +1,15 @@
+{
+  "name": "segundoproyectonode",
+  "version": "1.0.0",
+  "description": "Proyecto2",
+  "main": "saludo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@bojlk2",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "yargs-parser": "^21.0.0"
+  }
+}
