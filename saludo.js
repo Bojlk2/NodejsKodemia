@@ -4,3 +4,7 @@ var colors = require('colors')
 const saludo = params.name
 
 console.log(`Hola señor ${saludo}`.rainbow)
+
+
+const fs = require('fs')
+fs.readFile
