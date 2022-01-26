@@ -8,4 +8,4 @@ function appendFile(error) {
     console.log('El archivo se adjunto correctamente')
 }
 
-fs.appendFile('folder/hola.txt', 'Complemento de appendFile', appendFile)
+fs.appendFile('hola.txt', '\nComplemento de appendFile', appendFile)
