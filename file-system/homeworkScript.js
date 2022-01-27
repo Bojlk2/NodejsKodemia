@@ -6,32 +6,33 @@
  */
 
  const fs = require('fs')
+ const filePath = 'homework.txt'
 
- fs.writeFile('homework.txt', 'Tarea nodejs', 'utf8', (error) => {
+//Paso 1
+fs.writeFile(filePath, 'Tarea nodejs', 'utf8', (error) => {
     if (error){
         console.error('Hubo un error al crear el archivo:', error)
         return
     }
     console.log('El archivo se escribió exitosamente')
-})
-
-fs.appendFile('homework.txt', '\nSegunda linea del homework', (error) => {
+//Paso 2
+fs.appendFile(filePath, '\nSegunda linea del homework', (error) => {
     if (error) {
         console.error('No se pudo adjuntar', error)
         return
     }
     console.log('El archivo se adjunto correctamente')
+//Paso 3
+setTimeout(() => {
+    fs.unlink(filePath, (error) => {
+        if (error) {
+            console.error('Error al eliminar:', error)
+        }
+        console.log('El archivo se elimino correctamente')
+        })
+        }, 5000);
+    })
 })
 
 
-setTimeout(deleteFile, 5000)
 
-
-function deleteFile () {
-    fs.unlink('homework.txt', (error) => {
-            if (error) {
-                console.error('Error al eliminar:', error)
-            }
-            console.log('El archivo se elimino correctamente')
-        })
-}
