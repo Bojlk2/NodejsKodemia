@@ -109,34 +109,34 @@
  * 3. despues de 5 segundos eliminar el archivo (fs.unlink)
  */
 
-// const fs = require('fs')
+
 const fsPromises = require('fs/promises')
 
-const file = 'promises.txt'
+// const file = 'promises.txt'
 
-fsPromises.writeFile(file, 'Nuevo archivo de promesas', 'utf8')
-    .then(() => {
-        console.log('¡Documento creado exitosamente!')
-        fsPromises.appendFile(file, '\nSegunda linea del documento', 'utf8')
-            .then(() => {
-                console.log('Se inserto una segunda linea')
-                setTimeout(() => {
-                    fsPromises.unlink(file)
-                        .then(() => {
-                            console.log('¡Documento eliminado!')
-                        })
-                }, 5000)
-            })
-    })
-    .catch(error => {
-        console.error('Error:', error)
-    })
+// fsPromises.writeFile(file, 'Nuevo archivo de promesas', 'utf8')
+//     .then(() => {
+//         console.log('¡Documento creado exitosamente!')
+//         fsPromises.appendFile(file, '\nSegunda linea del documento', 'utf8')
+//             .then(() => {
+//                 console.log('Se inserto una segunda linea')
+//                 setTimeout(() => {
+//                     fsPromises.unlink(file)
+//                         .then(() => {
+//                             console.log('¡Documento eliminado!')
+//                         })
+//                 }, 5000)
+//             })
+//     })
+//     .catch(error => {
+//         console.error('Error:', error)
+//     })
 
 const file1 = 'promises1.txt'
 async function writeFile () {
     await fsPromises.writeFile(file1, 'Nuevo archivo de promesas', 'utf8')
     await fsPromises.appendFile(file1, '\nSegunda nueva Linea', 'utf8')
-    await setTimeout(() => {
+    setTimeout(() => {
         fsPromises.unlink(file1)    
     }, 5000)
 }
